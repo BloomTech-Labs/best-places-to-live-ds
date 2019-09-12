@@ -24,4 +24,4 @@ def make_predict(date):
     return jsonify(cpi=my_prediction[my_prediction['date'] == date]['mean_change'].to_string()[5:])
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
