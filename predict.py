@@ -13,9 +13,9 @@ def default():
 @app.route('/api/', methods=['POST'])
 def predict():
     input = request.get_json(force=True)
-    #city=input['city']
+    city=input['city']
     date=input['date']
-    return jsonify(cpi=my_prediction[my_prediction['date'] == date]['mean_change'].to_string()[5:])
+    return jsonify(cpi=my_prediction[(my_prediction['date'] == date) & (my_prediction['city'] == city)]['mean_change'].to_string()[5:])
 
 @app.route('/api/<date>', methods=['GET'])
 def make_predict(date):
