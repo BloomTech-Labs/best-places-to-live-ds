@@ -9,8 +9,8 @@ verify_ssl = true
 flask = "*"
 flask-sqlalchemy = "*"
 requests = "*"
-cpickle = "*"
 pandas = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
