@@ -18,10 +18,8 @@ def rankify(df, factors, top=10, quant=.75):
     for i in factors:
         df_copy = df_copy[df[i] > df_copy[i].quantile(quant)]
     df_copy['score'] = df_copy[factors].mean(axis=1)
-    df_copy.sort_values('score', ascending=False) 
+    df_copy.sort_values('score', ascending=False)
     return df_copy['name'].head(top).tolist()
-
-
 
 city_data = {
     "input1": ["population", "avg_commute_time"]
@@ -46,7 +44,7 @@ def city():
     print(factors)
     '''
     #print(city_data)
-    
+
     jd = json.dumps(city_data, ensure_ascii=False)
     data_array = json.loads(jd)
     factors = (data_array['input1'])
