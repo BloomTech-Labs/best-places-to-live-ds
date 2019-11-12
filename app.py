@@ -31,7 +31,7 @@ app = Flask(__name__)
 def city():
     
     # retrieve json user input data
-    #data = request.get_json(force=True)
+    data = request.get_json(force=True)
 
     # Extract factors from JSON and put them in a list
     '''
@@ -43,7 +43,7 @@ def city():
     '''
     #print(city_data)
 
-    jd = json.dumps(city_data, ensure_ascii=False)
+    jd = json.dumps(data, ensure_ascii=False)
     data_array = json.loads(jd)
     factors = (data_array['input1'])
     #print(factors)
