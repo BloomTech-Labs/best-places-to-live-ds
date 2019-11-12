@@ -45,7 +45,7 @@ def city():
 
     jd = json.dumps(data, ensure_ascii=False)
     data_array = json.loads(jd)
-    factors = (data_array[0])
+    factors = (data_array['input1'])
     #print(factors)
 
     # Call the rankify function to return top 10 cities
