@@ -4,8 +4,6 @@ import pandas as pd
 import requests
 import numpy as np
 import json
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.impute import SimpleImputer
 
 df1 = pd.read_csv('normalized.csv')
 
