@@ -5,7 +5,7 @@ import requests
 import numpy as np
 import json
 
-df1 = pd.read_csv('normalized.csv')
+df1 = pd.read_csv('ranked_df.csv')
 
 #reduced_df = df[df['population'] >= 93298]
 
