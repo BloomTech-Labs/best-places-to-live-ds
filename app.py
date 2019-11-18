@@ -16,7 +16,7 @@ def rankify(df, factors, top=20, quant=.60):
     for i in factors:
         df_copy = df_copy[df[i] > df_copy[i].quantile(quant)]
     df_copy['score'] = df_copy[factors].mean(axis=1)
-    df_copy.sort_values('score', ascending=False)
+    df_copy = df_copy.sort_values('score', ascending=False)
     return df_copy['name'].head(top).tolist()
 
 city_data = {
