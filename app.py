@@ -11,7 +11,7 @@ df1 = pd.read_csv('ranked_df.csv')
 
 
 # Function to return list of top cities
-def rankify(df, factors, top=10, quant=.75):
+def rankify(df, factors, top=20, quant=.60):
     df_copy = df
     for i in factors:
         df_copy = df_copy[df[i] > df_copy[i].quantile(quant)]
