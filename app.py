@@ -19,6 +19,14 @@ def rankify(df, factors, top=20, quant=.60):
     df_copy = df_copy.sort_values('score', ascending=False)
     return df_copy['name'].head(top).tolist()
 
+def city_output(df, cities):
+    df_copy = df
+    df2 = df_copy.loc[df['name'].isin(cities)]
+    columns = ['name', 'population', 'photo']
+    df3 = df2[columns]
+    return df3.to_dict(orient='record')
+
+
 city_data = {
     "input1": ["population", "avg_commute_time"]
 }
@@ -52,7 +60,11 @@ def city():
     cities = rankify(df1, factors)
     #print(cities)
 
-    return jsonify(cities)
+    dict1 = city_output(df1, cities)
+    #for city in cities:
+
+
+    return jsonify(dict1)
 
 
 @app.route('/', methods=['POST', 'GET'])
