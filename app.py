@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 import numpy as np
 import pandas as pd
 import requests
@@ -33,6 +34,7 @@ city_data = {
 
 # Initialize Flask app
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route('/api', methods=['POST', 'GET'])
