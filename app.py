@@ -16,22 +16,16 @@ def rankify(df, factors, top=20, quant=.60):
     df_copy['score'] = df_copy[factors].mean(axis=1)
     df_copy = df_copy.sort_values('score', ascending=False)
    
-    # retrieve top 20 cities and put them in a list
-    cities = df_copy[['name', 'score']].head(top).tolist()
-    
-    # truncate df row-wise to just the top 20 cities
-    df2 = df_copy.loc[df_copy['name'].isin(cities)]
-    
+    # truncate df row-wise to top 20 cities 
+    df_copy = df_copy.head(top)
+
     # initialize columns to be masked
     columns = ['name', 'population', 'photoWeb', 'photoMobile', 'score']
 
     # truncate the dataframe column-wise to the ones in 'columns'
-    df3 = df2[columns]
+    df2 = df_copy[columns]
 
-    df3 = df3.sort_values('score', ascending=False)
-    df3 = df3.drop(['score'],axis='columns')
-    
-    return df3.to_dict(orient='record')
+    return df2.to_dict(orient='record')
 
 city_data = {
     "input1": ["population", "avg_commute_time"]
