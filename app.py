@@ -7,9 +7,7 @@ import numpy as np
 import json
 
 df1 = pd.read_csv('ranked_df.csv')
-
-#reduced_df = df[df['population'] >= 93298]
-
+photos_df = pd.read_csv('photos.csv')
 
 # Function to return list of top cities
 def rankify(df, factors, top=20, quant=.60):
@@ -21,34 +19,31 @@ def rankify(df, factors, top=20, quant=.60):
     return df_copy['name'].head(top).tolist()
 
 def city_output(df, cities):
+    # make a copy of the dataframe
     df_copy = df
+
+    # truncate the dataframe row-wise to only the cities in the input
     df2 = df_copy.loc[df['name'].isin(cities)]
-    columns = ['name', 'population', 'photo']
+
+    # initialize columns to be masked
+    columns = ['name', 'population', 'photoWeb', 'photoMobile']
+
+    # truncate the dataframe column-wise to the ones in 'columns'
     df3 = df2[columns]
+
+    # return the dataframe in dictionary form
     return df3.to_dict(orient='record')
 
-'''
-def urls(city):
-
-    return str(response)
-'''
 
 city_data = {
     "input1": ["population", "avg_commute_time"]
 }
 
-city = ['dallas']
 
 # Initialize Flask app
 app = Flask(__name__)
 CORS(app)
 
-'''
-@app.route('/test', methods=['POST', 'GET'])
-def res():
-    dal = urls(city)
-    return jsonify(dal)
-'''
 
 @app.route('/api', methods=['POST', 'GET'])
 def city():
@@ -57,15 +52,6 @@ def city():
     data = request.get_json(force=True)
 
     # Extract factors from JSON and put them in a list
-    '''
-    factors = []
-    for key, value in city_data:
-        factors.append(value)
-        return list(factors)
-    print(factors)
-    '''
-    #print(city_data)
-
     jd = json.dumps(data, ensure_ascii=False)
     data_array = json.loads(jd)
     factors = (data_array['input1'])
@@ -76,9 +62,7 @@ def city():
     #print(cities)
 
     dict1 = city_output(df1, cities)
-    #for city in cities:
-
-
+ 
     return jsonify(dict1)
 
 
