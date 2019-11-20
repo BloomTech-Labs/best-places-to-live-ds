@@ -23,7 +23,15 @@ def rankify(df, factors, top=20, quant=.60):
     df_copy['photoMobile'] = df_copy['photoMobile'].replace({pd.np.nan: None})
     
     # initialize columns to be masked
-    columns = ['name', 'population', 'photoWeb', 'photoMobile', 'id']
+    columns = [
+               'name', 
+               'population', 
+               'photoWeb', 
+               'photoMobile', 
+               'id',
+               'short_name',
+               'state'
+               ]
 
     # truncate the dataframe column-wise to the ones in 'columns'
     df2 = df_copy[columns]
