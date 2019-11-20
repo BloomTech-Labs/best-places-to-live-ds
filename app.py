@@ -7,7 +7,6 @@ import numpy as np
 import json
 
 df1 = pd.read_csv('ranked_df.csv')
-photos_df = pd.read_csv('photos.csv')
 
 # Function to return list of top cities
 def rankify(df, factors, top=20, quant=.60):
