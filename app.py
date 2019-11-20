@@ -8,31 +8,27 @@ import json
 
 df1 = pd.read_csv('ranked_df.csv')
 
-# Function to return list of top cities
+
 def rankify(df, factors, top=20, quant=.60):
     df_copy = df
     for i in factors:
         df_copy = df_copy[df[i] > df_copy[i].quantile(quant)]
     df_copy['score'] = df_copy[factors].mean(axis=1)
     df_copy = df_copy.sort_values('score', ascending=False)
-    return df_copy['name'].head(top).tolist()
-
-def city_output(df, cities):
-    # make a copy of the dataframe
-    df_copy = df
-
-    # truncate the dataframe row-wise to only the cities in the input
+   
+    # retrieve top 20 cities and put them in a list
+    cities = df_copy['name'].head(top).tolist()
+    
+    # truncate df row-wise to just the top 20 cities
     df2 = df_copy.loc[df['name'].isin(cities)]
-
+    
     # initialize columns to be masked
     columns = ['name', 'population', 'photoWeb', 'photoMobile']
 
     # truncate the dataframe column-wise to the ones in 'columns'
     df3 = df2[columns]
-
-    # return the dataframe in dictionary form
+    
     return df3.to_dict(orient='record')
-
 
 city_data = {
     "input1": ["population", "avg_commute_time"]
@@ -58,11 +54,8 @@ def city():
 
     # Call the rankify function to return top 10 cities
     cities = rankify(df1, factors)
-    #print(cities)
-
-    dict1 = city_output(df1, cities)
  
-    return jsonify(dict1)
+    return jsonify(cities)
 
 
 @app.route('/', methods=['POST', 'GET'])
