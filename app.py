@@ -27,15 +27,26 @@ def city_output(df, cities):
     df3 = df2[columns]
     return df3.to_dict(orient='record')
 
+def urls(city):
+    #for city in cities:
+    url = 'https://api.teleport.org/api/urban_areas/slug:' + str(city) + '/images/'
+    response = url
+    return str(response)
 
 city_data = {
     "input1": ["population", "avg_commute_time"]
 }
 
+city = ['dallas']
+
 # Initialize Flask app
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/test', methods=['POST', 'GET'])
+def res():
+    dal = urls(city)
+    return jsonify(dal)
 
 @app.route('/api', methods=['POST', 'GET'])
 def city():
