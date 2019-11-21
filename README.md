@@ -58,11 +58,11 @@ The Data Science portions of this project can be lumped into three stages:
 🚫  Add to or delete souce links as needed for your project
 
 
--   [Source 1] (🚫add link to python notebook here)
--   [Source 2] (🚫add link to python notebook here)
--   [Source 3] (🚫add link to python notebook here)
--   [Source 4] (🚫add link to python notebook here)
--   [Source 5] (🚫add link to python notebook here)
+-   [Source 1] (https://raw.githubusercontent.com/labs15-best-places/backend/master/data-seeding/1-cities/data.js)
+-   [Source 2] (http://developers.teleport.org/api/getting_started/#photos_ua)
+-   [Source 3] ()
+-   [Source 4] ()
+-   [Source 5] ()
 
 ### Python Notebooks
 
@@ -75,8 +75,9 @@ The Data Science portions of this project can be lumped into three stages:
 [Python Notebook 3](🚫add link to python notebook here)
 
 ### 3️⃣ How to connect to the web API
+The url for the API is: 
+https://best-places-api.herokuapp.com/api
 
-🚫 List directions on how to connect to the API here
 
 ### 3️⃣ How to connect to the data API
 
