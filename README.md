@@ -1,6 +1,8 @@
 # 1️⃣ Best Places to Live -- Data Science Portion
 
-You can find the project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
+You can find the complete project at [Live in the Best Place](liveinthebestplace.com).
+
+The DS portion of this project found in this repo is a [Python Flask API](https://best-places-api.herokuapp.com/api)
 
 ## 5️⃣ Contributors
 
@@ -8,20 +10,13 @@ You can find the project at [🚫URL NAME GOES HERE](🚫copy and paste URL here
 
 |                                       [Jason Hsieh](https://github.com/)                                        |                                       [Michael Curry](https://github.com/mikedcurry)                                        |                                       [Student 3](https://github.com/)                                        |                                       [Student 4](https://github.com/)                                        |                                       [Student 5](https://github.com/)                                        |
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://ca.slack-edge.com/T4JUEB3ME-UKVHZ9FHQ-5a50836a0db2-512" width = "200" />](https://github.com/)                       |                      [<img src="https://avatars3.githubusercontent.com/u/45944625?s=460&v=4" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
+|                      [<img src="https://ca.slack-edge.com/T4JUEB3ME-UKVHZ9FHQ-5a50836a0db2-512" width = "200" />](https://github.com/justin-hsieh)                       |                      [<img src="https://avatars3.githubusercontent.com/u/45944625?s=460&v=4" width = "200" />](https://github.com/mikedcurry)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
+|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/justin-hsieh)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/mikedcurry)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/justin-hsieh/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/michael-curry-7ab92118a/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
 
 
-
-🚫 5️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
 
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
-![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-
-🚫 more info on using badges [here](https://github.com/badges/shields)
 
 ## Project Overview
 
@@ -40,11 +35,38 @@ The Data Science portions of this project can be lumped into three stages:
 
 ### Tech Stack
 
-🚫 List all of the languages, frameworks, services, etc used here.
+- Python
+- Heroku 
 
 ### 2️⃣ Predictions
 
-🚫 Describe your models here
+The model of our flask API takes in a JSON as a POST request in the format: 
+
+```Sample input:
+
+{
+"input1": ["population", "avg_commute_time"]
+}
+```
+
+The input comes from users at the Front-End. They select any number of the displayed factors as important in deciding a new home city. The DS flask API then returns another JSON with 20 cities in format:
+
+```{
+    "name": "New York City, NY",
+    "photoMobile": <url>,
+    "photoWeb": <url>,
+    "population": 8175133.0,
+    "geohash": 9whpt4gjbqfngtthkk9f
+  },
+```
+
+These 20 cities are ranked in order of best fit based upon user selected factors. 
+
+The city ranking function within our model works with pandas operations on a small csv found in the home directory of the flask API. The data-frame itself is composed of the following features: 133 possible city ranking factors; names of cities; location data; photo urls. The numerical data for the 133 factors have been transformed using `df.rank()` on a scale of 0 to 1. This flattens the distribution of each numeric feature such that each factor when compared to others are on the same scale. 
+
+[<img src="https://ca.slack-edge.com/T4JUEB3ME-UKVHZ9FHQ-5a50836a0db2-512" width = "200" />]
+
+The `rankify()` function works by 
 
 ### 2️⃣ Explanatory Variables
 
