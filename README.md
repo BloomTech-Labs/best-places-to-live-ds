@@ -66,7 +66,7 @@ These 20 cities are ranked in order of best fit based upon user selected factors
 
 The city ranking function within our model works with pandas operations on a small csv found in the home directory of the flask API. The data-frame itself is composed of the following features: 133 possible city ranking factors; names of cities; location data; photo urls. Each row represents one of the top 256 largest cities in the United States. 
 
-The numerical data for the 133 factors have been transformed using `df.rank()` on a scale of 0 to 1. This flattens the distribution (see below) of each numeric feature such that each factor when compared to others are on the same scale. 
+The numerical data for the 133 factors have been transformed using `df.rank()` on a scale of 0 to 1. This flattens the distribution (see below) of each numeric feature such that each factor when compared to others are on the same scale. Factors that are negatively coorilated to rank (e.g. commute time) have been reverse-ranked.
 
 <img src="https://github.com/Lambda-School-Labs/best-places-to-live-ds/blob/master/data/flat_dist.png" width = "200" />
 
