@@ -19,9 +19,6 @@ def rankify(df, factors, top=20, quant=.60):
     # truncate df row-wise to top 20 cities 
     df_copy = df_copy.head(top)
     
-    df_copy['photoWeb'] = df_copy['photoWeb'].replace({pd.np.nan: None})
-    df_copy['photoMobile'] = df_copy['photoMobile'].replace({pd.np.nan: None})
-    
     # initialize columns to be masked
     columns = [
                'name', 
