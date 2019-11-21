@@ -26,8 +26,7 @@ def rankify(df, factors, top=20, quant=.60):
     columns = [
                'name', 
                'population', 
-               'photoWeb', 
-               'photoMobile', 
+               'secure_url', # This is a photo url, should change the name...  
                'id',
                'short_name',
                'state'
