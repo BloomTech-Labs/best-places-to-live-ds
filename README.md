@@ -8,7 +8,7 @@ The DS portion of this project found in this repo is a [Python Flask API](https:
 
 🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
 
-|                                       [Jason Hsieh](https://github.com/)                                        |                                       [Michael Curry](https://github.com/mikedcurry)                                        |                                       [Student 3](https://github.com/)                                        |                                       [Student 4](https://github.com/)                                        |                                       [Student 5](https://github.com/)                                        |
+|                                       [Justin Hsieh](https://github.com/)                                        |                                       [Michael Curry](https://github.com/mikedcurry)                                        |                                       [Student 3](https://github.com/)                                        |                                       [Student 4](https://github.com/)                                        |                                       [Student 5](https://github.com/)                                        |
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
 |                      [<img src="https://ca.slack-edge.com/T4JUEB3ME-UKVHZ9FHQ-5a50836a0db2-512" width = "200" />](https://github.com/justin-hsieh)                       |                      [<img src="https://avatars3.githubusercontent.com/u/45944625?s=460&v=4" width = "200" />](https://github.com/mikedcurry)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
 |                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/justin-hsieh)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/mikedcurry)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
@@ -80,11 +80,11 @@ The `rankify()` function works by
 🚫  Add to or delete souce links as needed for your project
 
 
--   [Source 1] (🚫add link to python notebook here)
--   [Source 2] (🚫add link to python notebook here)
--   [Source 3] (🚫add link to python notebook here)
--   [Source 4] (🚫add link to python notebook here)
--   [Source 5] (🚫add link to python notebook here)
+-   [Source 1] (https://raw.githubusercontent.com/labs15-best-places/backend/master/data-seeding/1-cities/data.js)
+-   [Source 2] (http://developers.teleport.org/api/getting_started/#photos_ua)
+-   [Source 3] ()
+-   [Source 4] ()
+-   [Source 5] ()
 
 ### Python Notebooks
 
@@ -97,8 +97,9 @@ The `rankify()` function works by
 [Python Notebook 3](🚫add link to python notebook here)
 
 ### 3️⃣ How to connect to the web API
+The url for the API is: 
+https://best-places-api.herokuapp.com/api
 
-🚫 List directions on how to connect to the API here
 
 ### 3️⃣ How to connect to the data API
 
