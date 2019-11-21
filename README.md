@@ -42,7 +42,8 @@ The Data Science portions of this project can be lumped into three stages:
 
 The model of our flask API takes in a JSON as a POST request in the format: 
 
-```Sample input:
+```
+Sample input:
 
 {
 "input1": ["population", "avg_commute_time"]
@@ -51,7 +52,8 @@ The model of our flask API takes in a JSON as a POST request in the format:
 
 The input comes from users at the Front-End. They select any number of the displayed factors as important in deciding a new home city. The DS flask API then returns another JSON with 20 cities in format:
 
-```{
+```
+{
     "name": "New York City, NY",
     "photoMobile": <url>,
     "photoWeb": <url>,
@@ -66,7 +68,7 @@ The city ranking function within our model works with pandas operations on a sma
 
 The numerical data for the 133 factors have been transformed using `df.rank()` on a scale of 0 to 1. This flattens the distribution (see below) of each numeric feature such that each factor when compared to others are on the same scale. 
 
-[<img src="https://github.com/Lambda-School-Labs/best-places-to-live-ds/blob/master/data/flat_dist.png" width = "200" />]
+<img src="https://github.com/Lambda-School-Labs/best-places-to-live-ds/blob/master/data/flat_dist.png" width = "200" />
 
 The `rankify()` function works by filtering the dataframe by user selected factors. After filtering, only the top quantile of all factors selected by the user remain. The overall score of each city is calculated by taking the mean of the user selected factor by row. Finally the overall scores are sorted in descending order, and the top 20 city matches are added to the JSON along with location, population, and a photo url as above.
 
