@@ -85,13 +85,9 @@ The `rankify()` function works by filtering the dataframe by user selected facto
 
 ### Python Notebooks
 
-🚫  Add to or delete python notebook links as needed for your project
+[Data Wrangling / Methodology]https://colab.research.google.com/drive/1FHGibP9lyn1ZSdwtL7arVHsR9QNFae2j)
 
-[Python Notebook 1](🚫add link to python notebook here)
-
-[Python Notebook 2](🚫add link to python notebook here)
-
-[Python Notebook 3](🚫add link to python notebook here)
+<!-- [Python Notebook 2](🚫add link to python notebook here) -->
 
 ### 3️⃣ How to connect to the web API
 The url for the API is: 
