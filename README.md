@@ -90,8 +90,26 @@ https://best-places-api.herokuapp.com/api
 
 
 ### 3️⃣ How to connect to the data API
-
 <!-- 🚫 List directions on how to connect to the API here -->
+Sumbit a POST request to:
+[Python Flask API](https://best-places-api.herokuapp.com/api)
+
+In the format:
+```
+{
+"input1": ["population", "avg_commute_time", "<any number of valid factors>"]
+}
+```
+
+API Returns JSON in the format:
+```
+{
+    "name": "<city name>, <state>",
+    "secure_url": <photo_url>,
+    "population": <city population>,
+    "geohash": <geohash number>
+  },
+```
 
 ## Contributing
 
