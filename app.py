@@ -35,7 +35,7 @@ def rankify(df, factors, top=20, quant=.60):
     return df2.to_dict(orient='record')
 
 city_data = {
-    "input1": ["population", "avg_commute_time"]
+    "input1": ["avg_commute_time"]
 }
 
 
