@@ -25,8 +25,10 @@ def rankify(df, factors, top=20, quant=.60):
                'population', 
                'secure_url', # This is a photo url, should change the name...  
                'id',
+               '_id'
                'short_name',
-               'state'
+               'state',
+
                ]
 
     # truncate the dataframe column-wise to the ones in 'columns'
