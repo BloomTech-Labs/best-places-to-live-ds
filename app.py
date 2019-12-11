@@ -37,7 +37,7 @@ def rankify(df, factors, top=20, quant=.60):
     df2 = df_copy[columns]
 
     return df2.to_dict(orient='record')
-
+'''
 def radar_plt(df, city, factors):
     test = df.loc[df['_id'].isin(city)].isin(factors).T.reset_index()
     test.columns = ['theta', 'r']
@@ -63,7 +63,7 @@ def radar_plt(df, city, factors):
 
     return bytes_image
 # Example:
-
+'''
 city_factors = {
     "input1": ['score_business_freedom', 'cost-fitness-club', 'weather-sunshine-amount',
      'score_housing', 'score_internet_access', 'score_leisure_&_culture'],
@@ -96,15 +96,15 @@ def city():
  
     return jsonify(cities)
 
-
+'''
 @app.route('/visual', methods=['POST', 'GET'])
 def visuals():
-    data = request.get_json(force=True)
+    data1 = request.get_json(force=True)
 
-    jd = json.dumps(data, ensure_ascii=False)
-    data_array = json.loads(jd)
-    factors = (data_array['input1'])
-    city = (data_array['input2'])
+    jd1 = json.dumps(data1, ensure_ascii=False)
+    data_array1 = json.loads(jd1)
+    factors = (data_array1['input1'])
+    city = (data_array1['input2'])
 
     visual = radar_plt(df1, city, factors)
 
@@ -112,7 +112,7 @@ def visuals():
                      attachment_filename='plot.png',
                      mimetype='image/png')
 
-
+'''
 @app.route('/', methods=['POST', 'GET'])
 def responses():
     response = requests.get(
