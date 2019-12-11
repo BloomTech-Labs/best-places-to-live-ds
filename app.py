@@ -39,7 +39,7 @@ def rankify(df, factors, top=20, quant=.60):
     return df2.to_dict(orient='record')
 
 def radar_plt(df, city, factors):
-    test = df.loc[df['short_name'].isin(city)].isin(factors).T.reset_index()
+    test = df.loc[df['_id'].isin(city)].isin(factors).T.reset_index()
     test.columns = ['theta', 'r']
     test['r'] = test['r']*10
     test
