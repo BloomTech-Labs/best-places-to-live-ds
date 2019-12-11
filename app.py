@@ -1,11 +1,11 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, send_file
 from flask_cors import CORS
-import numpy as np
+import matplotlib.pyplot as plt
 import pandas as pd
 import requests
 import numpy as np
 import json
-
+import io
 df1 = pd.read_csv('ranked_df.csv')
 
 
@@ -38,6 +38,40 @@ def rankify(df, factors, top=20, quant=.60):
 
     return df2.to_dict(orient='record')
 
+def radar_plt(df, city, factors):
+    test = df.loc[df['short_name'].isin(city)].isin(factors).T.reset_index()
+    test.columns = ['theta', 'r']
+    test['r'] = test['r']*10
+    test
+    fig = plt.figure(figsize=(10,10))
+    ax = fig.add_subplot(111,polar=True)
+    sample = test['r']
+    # sample = np.random.uniform(low=0.5, high=13.3, size=(15,))
+    N = test['r'].shape[0]
+    colors= '#f51646'
+    # colors = plt.cm.viridis(radii / 10.)
+    width = np.pi / N*1.8
+    theta = np.arange(0, 2*np.pi, 2*np.pi/N) 
+    bars = ax.bar(theta, sample, width=width, color=colors, alpha=0.5)
+    ax.set_xticks(theta)
+    ax.set_xticklabels(test['theta'])
+    ax.yaxis.grid(True)
+    
+    bytes_image = io.BytesIO()
+    plt.savefig(bytes_image, format='png')
+    bytes_image.seek(0)
+
+    return bytes_image
+# Example:
+
+city_factors = {
+    "input1": ['score_business_freedom', 'cost-fitness-club', 'weather-sunshine-amount',
+     'score_housing', 'score_internet_access', 'score_leisure_&_culture',
+     'score_safety', 'score_startups', 'score_taxation', 'score_tolerance',
+     'unemployment-rate','cost_of_living', 'score_outdoors', 'score_education', 
+     'score_commute', 'lgbt-index', 'drinking-water-quality-telescore', 'events-telescore'],
+     "input2": ["Portland"]
+}
 city_data = {
     "input1": ["avg_commute_time"]
 }
@@ -64,6 +98,22 @@ def city():
     cities = rankify(df1, factors)
  
     return jsonify(cities)
+
+
+@app.route('/visual', methods=['POST', 'GET'])
+def visuals():
+    #data = request.get_json(force=True)
+
+    jd = json.dumps(city_factors, ensure_ascii=False)
+    data_array = json.loads(jd)
+    factors = (data_array['input1'])
+    city = (data_array['input2'])
+
+    visual = radar_plt(df1, city, factors)
+
+    return send_file(visual,
+                     attachment_filename='plot.png',
+                     mimetype='image/png')
 
 
 @app.route('/', methods=['POST', 'GET'])
