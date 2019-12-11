@@ -13,6 +13,7 @@ pandas = "*"
 gunicorn = "*"
 python-dotenv = "*"
 flask-cors = "*"
+matplotlib = "*"
 
 [requires]
 python_version = "3.7"
