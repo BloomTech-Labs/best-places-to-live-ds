@@ -17,10 +17,7 @@ def rankify(df, factors, top=20, quant=.60):
     
     df_copy['score'] = df_copy[factors].mean(axis=1)
     df_copy = df_copy.sort_values('score', ascending=False)
-   
-    # truncate df row-wise to top 20 cities 
-    #df_copy = df_copy
-    
+
     # initialize columns to be masked
     columns = [
                'name', 
