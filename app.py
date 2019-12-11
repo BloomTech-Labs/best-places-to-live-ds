@@ -39,7 +39,12 @@ def rankify(df, factors, top=20, quant=.60):
     return df2.to_dict(orient='record')
 
 def radar_plt(df, city, factors):
-    test = df.loc[df['_id'].isin(city)].isin(factors).T.reset_index()
+    df_copy = df
+    df_copy = df_copy.loc[df_copy['_id'] == city]
+    
+    df_copy = df_copy[factors]
+    test = df_copy.T.reset_index()
+
     test.columns = ['theta', 'r']
     test['r'] = test['r']*10
     test
@@ -67,7 +72,7 @@ def radar_plt(df, city, factors):
 city_factors = {
     "input1": ['score_business_freedom', 'cost-fitness-club', 'weather-sunshine-amount',
      'score_housing', 'score_internet_access', 'score_leisure_&_culture'],
-     "input2": ["5dc9f97b2a65b6af02024ae7"]
+     "input2": "5dc9f97b2a65b6af0202599f"
 }
 city_data = {
     "input1": ["avg_commute_time"]
