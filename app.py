@@ -66,11 +66,8 @@ def radar_plt(df, city, factors):
 
 city_factors = {
     "input1": ['score_business_freedom', 'cost-fitness-club', 'weather-sunshine-amount',
-     'score_housing', 'score_internet_access', 'score_leisure_&_culture',
-     'score_safety', 'score_startups', 'score_taxation', 'score_tolerance',
-     'unemployment-rate','cost_of_living', 'score_outdoors', 'score_education', 
-     'score_commute', 'lgbt-index', 'drinking-water-quality-telescore', 'events-telescore'],
-     "input2": ["Portland"]
+     'score_housing', 'score_internet_access', 'score_leisure_&_culture'],
+     "input2": ["5dc9f97b2a65b6af02024ae7"]
 }
 city_data = {
     "input1": ["avg_commute_time"]
