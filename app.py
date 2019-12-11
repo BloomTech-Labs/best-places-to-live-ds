@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, render_template, send_file
 from flask_cors import CORS
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import pandas as pd
 import requests
 import numpy as np
