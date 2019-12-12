@@ -51,9 +51,9 @@ def radar_plt(df, city, factors):
     sample = test['r']
     # sample = np.random.uniform(low=0.5, high=13.3, size=(15,))
     N = test['r'].shape[0]
-    colors = plt.cm.PuRd(radii / 10)
+    # colors = plt.cm.PuRd(test['r'] / 10)
     # colors= '#f51646'
-    # colors = plt.cm.viridis(radii / 10.)
+    colors = plt.cm.viridis(test['r'] / 10.)
     width = np.pi / N*1.8
     theta = np.arange(0, 2*np.pi, 2*np.pi/N) 
     bars = ax.bar(theta, sample, width=width, color=colors, alpha=0.5)
