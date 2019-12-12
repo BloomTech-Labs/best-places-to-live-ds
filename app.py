@@ -65,10 +65,10 @@ def radar_plt(df, city, factors):
 
     ax.set_xticks(theta)
     ax.set_xticklabels(test['theta'])
-    
+
     y_label_text = ["{}%".format(int(loc)) for loc in plt.yticks()[0]]
     ax.set_yticklabels(y_label_text)
-    ax.yaxis.grid(True)
+    # ax.yaxis.grid(True)
     
     bytes_image = io.BytesIO()
     plt.savefig(bytes_image, format='png')
