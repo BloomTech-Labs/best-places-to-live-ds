@@ -61,7 +61,7 @@ def radar_plt(df, city, factors):
     colors = plt.cm.GnBu(test['r'] / 150)
     width = np.pi / N*1.8
     theta = np.arange(0, 2*np.pi, 2*np.pi/N) 
-    bars = ax.bar(theta, rank, width=width, color=colors, alpha=0.75)
+    bars = ax.bar(theta, rank, width=width, color=colors, alpha=0.9)
 
     ax.set_xticks(theta)
     ax.set_xticklabels(test['theta'])
