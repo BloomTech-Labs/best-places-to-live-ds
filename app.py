@@ -108,9 +108,9 @@ def city():
 
 @app.route('/visual', methods=['POST', 'GET'])
 def visuals():
-    #data1 = request.get_json(force=True)
+    data1 = request.get_json(force=True)
 
-    jd1 = json.dumps(city_factors, ensure_ascii=False)
+    jd1 = json.dumps(data1, ensure_ascii=False)
     data_array1 = json.loads(jd1)
     factors = (data_array1['input1'])
     city = (data_array1['input2'])
