@@ -42,15 +42,11 @@ def radar_plt(df, city, factors):
     df_copy = df_copy[factors]
     test = df_copy.T.reset_index()
 
-    test = df.loc[df['short_name'] == city][factors].T.reset_index()
     test.columns = ['theta', 'r']
     test['r'] = test['r']*100
     test['theta'] = test['theta'].replace('_', ' ', regex=True
-                                          ).replace('score ', '', regex=True
-                                                    ).replace('ranked ', '', 
-                                                              regex=True
-                                                              ).str.title()
-    test
+                                ).replace('score ', '', regex=True
+                                ).replace('ranked ', '',regex=True).str.title()
 
     plt.style.use("bmh")
     fig = plt.figure(figsize=(10,10))
@@ -75,7 +71,7 @@ def radar_plt(df, city, factors):
     bytes_image.seek(0)
 
     return bytes_image
-# Example:
+
 
 city_factors = {
     "input1": ['score_business_freedom', 'cost-fitness-club', 'weather-sunshine-amount',
@@ -112,9 +108,9 @@ def city():
 
 @app.route('/visual', methods=['POST', 'GET'])
 def visuals():
-    data1 = request.get_json(force=True)
+    #data1 = request.get_json(force=True)
 
-    jd1 = json.dumps(data1, ensure_ascii=False)
+    jd1 = json.dumps(city_factors, ensure_ascii=False)
     data_array1 = json.loads(jd1)
     factors = (data_array1['input1'])
     city = (data_array1['input2'])
