@@ -42,23 +42,32 @@ def radar_plt(df, city, factors):
     df_copy = df_copy[factors]
     test = df_copy.T.reset_index()
 
+    test = df.loc[df['short_name'] == city][factors].T.reset_index()
     test.columns = ['theta', 'r']
-    test['r'] = test['r']*10
+    test['r'] = test['r']*100
+    test['theta'] = test['theta'].replace('_', ' ', regex=True
+                                          ).replace('score ', '', regex=True
+                                                    ).replace('ranked ', '', 
+                                                              regex=True
+                                                              ).str.title()
     test
+
     plt.style.use("bmh")
     fig = plt.figure(figsize=(10,10))
     ax = fig.add_subplot(111,polar=True)
-    sample = test['r']
-    # sample = np.random.uniform(low=0.5, high=13.3, size=(15,))
+
+    rank = test['r']
     N = test['r'].shape[0]
-    # colors = plt.cm.PuRd(test['r'] / 10)
-    # colors= '#f51646'
-    colors = plt.cm.viridis(test['r'] / 10.)
+    colors = plt.cm.GnBu(test['r'] / 150)
     width = np.pi / N*1.8
     theta = np.arange(0, 2*np.pi, 2*np.pi/N) 
-    bars = ax.bar(theta, sample, width=width, color=colors, alpha=0.5)
+    bars = ax.bar(theta, rank, width=width, color=colors, alpha=0.75)
+
     ax.set_xticks(theta)
     ax.set_xticklabels(test['theta'])
+    
+    y_label_text = ["{}%".format(int(loc)) for loc in plt.yticks()[0]]
+    ax.set_yticklabels(y_label_text)
     ax.yaxis.grid(True)
     
     bytes_image = io.BytesIO()
