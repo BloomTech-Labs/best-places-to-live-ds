@@ -45,12 +45,14 @@ def radar_plt(df, city, factors):
     test.columns = ['theta', 'r']
     test['r'] = test['r']*10
     test
+    plt.style.use("bmh")
     fig = plt.figure(figsize=(10,10))
     ax = fig.add_subplot(111,polar=True)
     sample = test['r']
     # sample = np.random.uniform(low=0.5, high=13.3, size=(15,))
     N = test['r'].shape[0]
-    colors= '#f51646'
+    colors = plt.cm.PuRd(radii / 10)
+    # colors= '#f51646'
     # colors = plt.cm.viridis(radii / 10.)
     width = np.pi / N*1.8
     theta = np.arange(0, 2*np.pi, 2*np.pi/N) 
