@@ -51,6 +51,7 @@ def radar_plt(df, city, factors):
     plt.style.use("bmh")
     fig = plt.figure(figsize=(10,10))
     ax = fig.add_subplot(111,polar=True)
+    ax.spines['polar'].set_visible(False)
 
     rank = test['r']
     N = test['r'].shape[0]
@@ -60,7 +61,7 @@ def radar_plt(df, city, factors):
     bars = ax.bar(theta, rank, width=width, color=colors, alpha=0.9)
 
     ax.set_xticks(theta)
-    ax.set_xticklabels(test['theta'], fontweight='bold')
+    ax.set_xticklabels(test['theta'], fontweight='bold', fontsize=12 )
 
     y_label_text = ["{}%".format(int(loc)) for loc in plt.yticks()[0]]
     ax.set_yticklabels(y_label_text)
