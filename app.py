@@ -158,7 +158,7 @@ def city_retrieval():
     # Extract factors from JSON and put them in a list
     jd = json.dumps(data, ensure_ascii=False)
     data_array = json.loads(jd)
-    factors = (data_array['input1'])
+    factors = (data_array['factors'])
     #print(factors)
 
     # Call the rankify function to return top 10 cities
