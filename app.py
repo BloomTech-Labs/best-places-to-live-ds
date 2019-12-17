@@ -35,6 +35,33 @@ def rankify(df, factors, top=20, quant=.60):
 
     return df2.to_dict(orient='record')
 
+def best_worst_city(df, factors):
+    final_dict = []
+    for factor in factors:
+        avg = df[factor].mean()
+    
+        df1 = df.loc[df[factor] == df[factor].max(), [factor,'_id']]
+        max_score = df1[factor].values[0]
+        max_score_city = df1['_id'].values[0]
+    
+        df2 = df.loc[df[factor] == df[factor].min(), [factor,'_id']]
+        min_score = df2[factor].values[0]
+        min_score_city = df2['_id'].values[0]
+    
+        dict1 = {
+            factor: 
+            {
+                'bestCityID': max_score_city,
+                'bestCityFactorScore': max_score,
+                'worstCityID': min_score_city,
+                'worstCityFactorScore': min_score, 
+                'averageFactorScore': avg
+            }
+        }
+        final_dict.append(dict1)
+    return final_dict
+
+
 def radar_plt(df, city, factors):
     df_copy = df
     df_copy = df_copy.loc[df_copy['_id'] == city]
@@ -121,6 +148,22 @@ def visuals():
                      attachment_filename='plot.png',
                      mimetype='image/png')
 
+@app.route('/compare', methods=['POST', 'GET'])
+def city_retrieval():
+    
+    # retrieve json user input data
+    data = request.get_json(force=True)
+
+    # Extract factors from JSON and put them in a list
+    jd = json.dumps(data, ensure_ascii=False)
+    data_array = json.loads(jd)
+    factors = (data_array['input1'])
+    #print(factors)
+
+    # Call the rankify function to return top 10 cities
+    factor_cities = best_worst_city(df1, factors)
+ 
+    return jsonify(factor_cities)
 
 @app.route('/', methods=['POST', 'GET'])
 def responses():
