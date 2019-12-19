@@ -42,7 +42,7 @@ def best_worst_city(df, factors):
     
         df1 = df.loc[df[factor] == df[factor].max(), [factor,'name','_id']]
         max_score = df1[factor].values[0]
-        max_score_city = df1['_id'].values[0]
+        max_score_city = df1['name'].values[0]
         max_score_id = df1['_id'].values[0]
     
         df2 = df.loc[df[factor] == df[factor].min(), [factor,'name','_id']]
@@ -57,8 +57,8 @@ def best_worst_city(df, factors):
                 'bestCityName':max_score_id,
                 'bestCityID': max_score_city,
                 'worstCityFactorScore': min_score, 
-                'worstCityName': min_score_id,
-                'worstCityID': min_score_city,
+                'worstCityName': min_score_city,
+                'worstCityID': min_score_id,
                 'averageFactorScore': avg
             }
         }
