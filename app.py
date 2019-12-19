@@ -7,7 +7,7 @@ import numpy as np
 import json
 import io
 df1 = pd.read_csv('ranked_df.csv')
-
+df2 = pd.read_csv('non_norm_df.csv')
 
 def rankify(df, factors, top=20, quant=.60):
     df_copy = df
@@ -34,6 +34,37 @@ def rankify(df, factors, top=20, quant=.60):
     df2 = df_copy[columns]
 
     return df2.to_dict(orient='record')
+
+def best_worst_city(df, factors):
+    final_dict = []
+    for factor in factors:
+        avg = df[factor].mean()
+    
+        df1 = df.loc[df[factor] == df[factor].max(), [factor,'name','_id']]
+        max_score = df1[factor].values[0]
+        max_score_city = df1['name'].values[0]
+        max_score_id = df1['_id'].values[0]
+    
+        df2 = df.loc[df[factor] == df[factor].min(), [factor,'name','_id']]
+        min_score = df2[factor].values[0]
+        min_score_city = df2['name'].values[0]
+        min_score_id = df2['_id'].values[0]
+    
+        dict1 = {
+            factor: 
+            {
+                'bestCityFactorScore': max_score,
+                'bestCityName':max_score_city,
+                'bestCityID': max_score_id,
+                'worstCityFactorScore': min_score, 
+                'worstCityName': min_score_city,
+                'worstCityID': min_score_id,
+                'averageFactorScore': avg
+            }
+        }
+        final_dict.append(dict1)
+    return final_dict
+
 
 def radar_plt(df, city, factors):
     df_copy = df
@@ -122,6 +153,22 @@ def visuals():
                      attachment_filename='plot.png',
                      mimetype='image/png')
 
+@app.route('/compare', methods=['POST', 'GET'])
+def city_retrieval():
+    
+    # retrieve json user input data
+    data = request.get_json(force=True)
+
+    # Extract factors from JSON and put them in a list
+    jd = json.dumps(data, ensure_ascii=False)
+    data_array = json.loads(jd)
+    factors = (data_array['factors'])
+    #print(factors)
+
+    # Call the rankify function to return top 10 cities
+    factor_cities = best_worst_city(df2, factors)
+ 
+    return jsonify(factor_cities)
 
 @app.route('/', methods=['POST', 'GET'])
 def responses():
