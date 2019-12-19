@@ -54,8 +54,8 @@ def best_worst_city(df, factors):
             factor: 
             {
                 'bestCityFactorScore': max_score,
-                'bestCityName':max_score_id,
-                'bestCityID': max_score_city,
+                'bestCityName':max_score_city,
+                'bestCityID': max_score_id,
                 'worstCityFactorScore': min_score, 
                 'worstCityName': min_score_city,
                 'worstCityID': min_score_id,
