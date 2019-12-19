@@ -7,7 +7,7 @@ import numpy as np
 import json
 import io
 df1 = pd.read_csv('ranked_df.csv')
-
+df2 = pd.read_csv('non_norm_df.csv')
 
 def rankify(df, factors, top=20, quant=.60):
     df_copy = df
@@ -40,21 +40,25 @@ def best_worst_city(df, factors):
     for factor in factors:
         avg = df[factor].mean()
     
-        df1 = df.loc[df[factor] == df[factor].max(), [factor,'_id']]
+        df1 = df.loc[df[factor] == df[factor].max(), [factor,'name','_id']]
         max_score = df1[factor].values[0]
         max_score_city = df1['_id'].values[0]
+        max_score_id = df1['_id'].values[0]
     
-        df2 = df.loc[df[factor] == df[factor].min(), [factor,'_id']]
+        df2 = df.loc[df[factor] == df[factor].min(), [factor,'name','_id']]
         min_score = df2[factor].values[0]
-        min_score_city = df2['_id'].values[0]
+        min_score_city = df2['name'].values[0]
+        min_score_id = df2['_id'].values[0]
     
         dict1 = {
             factor: 
             {
-                'bestCityID': max_score_city,
                 'bestCityFactorScore': max_score,
-                'worstCityID': min_score_city,
+                'bestCityName':max_score_id,
+                'bestCityID': max_score_city,
                 'worstCityFactorScore': min_score, 
+                'worstCityName': min_score_id,
+                'worstCityID': min_score_city,
                 'averageFactorScore': avg
             }
         }
@@ -162,7 +166,7 @@ def city_retrieval():
     #print(factors)
 
     # Call the rankify function to return top 10 cities
-    factor_cities = best_worst_city(df1, factors)
+    factor_cities = best_worst_city(df2, factors)
  
     return jsonify(factor_cities)
 
