@@ -118,8 +118,8 @@ city_data = {
     "input1": ["avg_commute_time"]
 }
 factor_normal = {
-    "id": "5dc9f97b2a65b6af0202599f",
-    "factors": ['score_business_freedom', 'cost-fitness-club', 'weather-sunshine-amount']
+    #"id": "5dc9f97b2a65b6af0202599f",
+    "factors": ['score_startups', 'score_safety']
 }
 
 # Initialize Flask app
