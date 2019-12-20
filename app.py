@@ -104,6 +104,10 @@ def radar_plt(df, city, factors):
 
     return bytes_image
 
+def get_normalized_scores(df, id, factors):
+    df1 = df.loc[df['_id'] == id]
+    df2 = df1[factors]
+    return df2.to_dict(orient='record')
 
 city_factors = {
     "input1": ['score_business_freedom', 'cost-fitness-club', 'weather-sunshine-amount',
@@ -113,7 +117,10 @@ city_factors = {
 city_data = {
     "input1": ["avg_commute_time"]
 }
-
+factor_normal = {
+    #"id": "5dc9f97b2a65b6af0202599f",
+    "factors": ['score_startups', 'score_safety']
+}
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -169,6 +176,24 @@ def city_retrieval():
     factor_cities = best_worst_city(df2, factors)
  
     return jsonify(factor_cities)
+
+@app.route('/normalized', methods=['POST', 'GET'])
+def score_retrieval():
+    
+    # retrieve json user input data
+    data = request.get_json(force=True)
+
+    # Extract factors from JSON and put them in a list
+    jd = json.dumps(data, ensure_ascii=False)
+    data_array = json.loads(jd)
+    city_id = (data_array['id'])
+    factors = (data_array['factors'])
+    #print(factors)
+
+    # Call the rankify function to return top 10 cities
+    factor_scores = get_normalized_scores(df1, city_id, factors)
+ 
+    return jsonify(factor_scores)
 
 @app.route('/', methods=['POST', 'GET'])
 def responses():
